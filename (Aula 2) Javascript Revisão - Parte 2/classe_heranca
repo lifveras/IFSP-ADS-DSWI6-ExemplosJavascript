@@ -1,0 +1,38 @@
+// classe Base
+class Range {
+    constructor(from, to) {
+        this.from = from;
+        this.to = to;
+    }
+
+    includes(x) { return this.from <= x && x <= this.to; }
+
+    *iterator() {
+        for(let x = Math.ceil(this.from); x <= this.to; x++) yield x;
+    }
+
+    toString() { return `(${this.from}...${this.to})`; }
+}
+
+// classe Span estende Range
+class Span extends Range{
+    constructor(start, span){
+        let from, to;
+        if (span >= 0) [from, to] = [start, start + span];
+        else [to, from] = [start, start + span]
+        super(from, to); //uso do super para a superclasse
+    }
+    //sobrescrita de método
+    toString() {
+        return `(${this.from}... +${this.to - this.from})`;
+    }
+}
+
+let s = new Span(10, -4);
+
+console.log(s.toString());
+
+// executando o iterador até que o mesmo se torne undefined no value
+for(let x of s.iterator()){
+    console.log(x);
+}
