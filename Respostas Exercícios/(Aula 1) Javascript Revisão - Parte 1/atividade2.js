@@ -1,32 +1,11 @@
-// Biblioteca para ler entradas uma linha por vez
-const readLine = require('readline'); //https://nodejs.org/api/readline.html#readline
-
-// Abre uma comunicação com a entrada/saída padrão
-var leitor = readLine.createInterface({
-    input: process.stdin,
-    output: process.stdout
-});
-
-function ask(question, yes, no){
-    // Método question recebe uma pergunta e a função 
-    // que recebe a entrada de usuário
-    leitor.question(
-        question,
-        (answer) =>{
-            if(answer === 'yes') 
-                yes();
-            else 
-                no();
-                leitor.close();
-        }
-    )
-  
+function checkSpam(str){
+    // Como search retorna -1 ao não encontrar valor, somando com 1 resuta 0, que é um valor Falsy
+    // if (1 + str.toLowerCase().search("viagra") || 1 + str.toUpperCase().search('XXX')) 
+    if (str.toLowerCase().includes("viagra") ||str.toUpperCase().includes('XXX')) 
+        return true;
+    return false;
 }
 
-ask(
-    "Do you agree (yes/no)",
-    // function(){ console.log("You agreed.");},
-    () => console.log("You agreed."), // Arrow Function
-    // function(){ console.log("You canceled the execution.");},
-    () => console.log("You canceled the execution."), // Arrow Function
-)
+console.log(checkSpam('buy ViAgRA now'));
+console.log(checkSpam('free xxxxx'));
+console.log(checkSpam('innocent rabbit'));
