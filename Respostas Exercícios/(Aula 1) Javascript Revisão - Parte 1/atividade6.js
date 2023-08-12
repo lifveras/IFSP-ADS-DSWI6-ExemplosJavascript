@@ -1,11 +1,8 @@
-function camelize(str){
-    let strParts = str.split("-");
-    let camelizedStr = strParts[0];
-    for(let str of strParts.slice(1))
-        camelizedStr = camelizedStr + str.charAt(0).toUpperCase() + str.slice(1);
-    return camelizedStr;    
+function loop(valor, fCond, fAtualiza, fCorpo){
+    while(fCond(valor)){
+        fCorpo(valor);
+        valor = fAtualiza(valor);
+    }
 }
-
-console.log(camelize("background-color")=="backgroundColor");
-console.log(camelize("list-style-image")=="listStyleImage");
-console.log(camelize("-webkit-transition")=="WebkitTransition");
+//  valor|  fCond   |  fAtualiza  | fCorpo
+loop( 3 , n => n > 0 , n => n - 1 , console.log);

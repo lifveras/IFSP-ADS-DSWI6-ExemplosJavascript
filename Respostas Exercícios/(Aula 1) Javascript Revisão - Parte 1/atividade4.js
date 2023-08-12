@@ -1,7 +1,18 @@
-function extractCurrencyValue(value) {
-    let idx = value.indexOf("$");
-    let result = value.slice(-1*((value.length - 1) - idx));  
-    return eval(result);  
+function makeCounter(){
+    let count = 0;
+       
+    return function(){
+       return count++;
+    }
 }
 
-console.log(extractCurrencyValue('$120') === 120)
+// Elas são independentes
+let counter = makeCounter();
+// O count da criação dessa nova função não é o mesmo da chamada anterior
+let counter2 = makeCounter();
+
+console.log(counter()); // saída 0 
+console.log(counter()); // saída 1
+
+console.log(counter2()); // saída 0
+console.log(counter2()); // saída 1
