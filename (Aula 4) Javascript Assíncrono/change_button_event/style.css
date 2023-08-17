@@ -1,0 +1,20 @@
+.okay{
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    width: 200px;
+    height: 130px;
+    transform: translate(-50%, -50%);
+}
+
+.clicked{
+    background-color: rgb(98, 0, 255);
+    font-style: normal;
+    font-weight: bolder;
+    color: greenyellow;
+}
+
+/* top: 50%;
+left: 50%;
+position: absolute;
+transform: translate(-50%,-50%); */

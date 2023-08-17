@@ -1,0 +1,12 @@
+.profile_label{
+    text-transform: capitalize;
+    font-weight: bold;
+}
+
+.bitcoin_loss{
+    color: red;
+}
+
+.bitcoin_gain{
+    color: green;
+}
