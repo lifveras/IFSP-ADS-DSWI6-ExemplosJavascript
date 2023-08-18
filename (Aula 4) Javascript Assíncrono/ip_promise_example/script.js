@@ -5,7 +5,7 @@ const getJson = function(url){
         var request = new XMLHttpRequest(); //Requisição AJAX
         request.open('GET', url);
         request.responseType = "text";
-
+        // load é o evento disparado quando a resposta do servidor chega ao cliente
         request.onload = function(){
             if (request.status == 200){
                 //O que for passado para resolve será repassado para o
@@ -18,7 +18,8 @@ const getJson = function(url){
                 + " - Status: " + request.statusText));
             }
         }
-
+		
+        //error é disparado se houver problemas na comunicação com o servidor
         request.onerror = function() {
             //Outra situação de rejeição da Promise
             reject(Error('Ocorreu um erro de rede!'));

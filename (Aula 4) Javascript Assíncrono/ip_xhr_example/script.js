@@ -7,7 +7,7 @@ function getMyPublicIp(url, callback) { //Note o argumento que recebe o callback
     // Registra um callback que será invocado quando a resposta do servidor chegar
     request.onload = function () {
         if (request.status === 200) {
-            // Se o status HTTP for bom, pega a resposta com o número da versão e invoca a callback
+            // Se o status HTTP for OK, pega a resposta com o número do IP e invoca a callback
             let currentIp = JSON.parse(request.responseText).ip;
             callback(currentIp);
         } else {

@@ -5,4 +5,4 @@ var prom4 = prom3.then(()=>{console.log("prom3")});
 var prom5 = prom4.then(()=>{console.log("prom4")});
 
 // A cadeia de execuções de Promises só encerra quando não há
-// mais chamadas para de then()
+// mais chamadas para then().
