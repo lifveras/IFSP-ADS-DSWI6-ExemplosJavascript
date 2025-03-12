@@ -1,5 +1,5 @@
 // Biblioteca para ler entradas uma linha por vez
-const readLine = require('readline'); //https://nodejs.org/api/readline.html#readline
+const readLine = require('node:readline'); //https://nodejs.org/api/readline.html#readline
 
 // Abre uma comunicação com a entrada/saída padrão
 var leitor = readLine.createInterface({

@@ -1,11 +1,11 @@
 function groupById(data){
     if(data instanceof Array){
         return data.reduce(
-            (value, item) => {
-                value[item.id] = item;
-                return value;
+            (valorAnterior, itemAnteriorLista) => {
+                valorAnterior[itemAnteriorLista.id] = itemAnteriorLista;
+                return valorAnterior;
             }, 
-            {}
+            {} // O valor inicial é um objeto, pois é sobre ele que o objeto com ids como chaves será construído
         );
     } 
     return null;

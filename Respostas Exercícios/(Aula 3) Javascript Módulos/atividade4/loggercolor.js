@@ -1,4 +1,4 @@
-const util = require('util');
+const util = require('node:util');
 
 const inspectOpts = {
     colors:true,
@@ -13,7 +13,7 @@ function info(){
     util.inspect.styles["string"] = "blue";
     debugInfo(
         util.inspect("Está é uma mensagem de informação", inspectOpts)
-    )
+    )    
 }
 
 // Para ativar as mensagens desta função, utilizar o comando
